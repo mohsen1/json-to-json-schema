@@ -1,5 +1,8 @@
 # JSON to JSON Schema
 
+
+[![Build Status](https://travis-ci.org/mohsen1/json-to-json-schema.svg?branch=master)](https://travis-ci.org/mohsen1/json-to-json-schema)
+
 > JSON to JSON Schema convert a JSON to a JSON Schema describing that JSON
 
 ## Usage
