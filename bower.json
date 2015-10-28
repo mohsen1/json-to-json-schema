@@ -1,0 +1,25 @@
+{
+  "name": "json-to-json-schema",
+  "description": "JSON to JSON Schema. Convert a JSON to a JSON Schema describing that JSON",
+  "main": "index.js",
+  "authors": [
+    "Mohsen Azimi <me@azimi.me>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "json",
+    "schema",
+    "json"
+  ],
+  "moduleType": [
+    "globals"
+  ],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

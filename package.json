@@ -1,0 +1,32 @@
+{
+  "name": "json-to-json-schema",
+  "version": "0.0.0",
+  "description": "JSON to JSON Schema. Convert a JSON to a JSON Schema describing that JSON",
+  "main": "index.js",
+  "devDependencies": {
+    "chai": "^3.3.0",
+    "babel": "^5.8.23",
+    "babelify": "^6.3.0",
+    "browserify": "^11.2.0",
+    "browserify-global-shim": "^1.0.0",
+    "eslint": "^1.5.1",
+    "mocha": "^2.3.3",
+    "mocha-eslint": "^1.0.0"
+  },
+  "scripts": {
+    "test": "mocha --compilers js:babel/register",
+    "browserify": "browserify --debug src/index.js -t babelify --outfile dist/index.js",
+    "prepublish": "npm run browserify"
+  },
+  "repository": {
+    "type": "git",
+    "url": "mohsen1/json-to-json-schema "
+  },
+  "keywords": [
+    "json",
+    "schema",
+    "json"
+  ],
+  "author": "Mohsen Azimi <me@azimi.me>",
+  "license": "MIT"
+}
