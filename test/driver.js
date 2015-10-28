@@ -7,7 +7,7 @@ import expect from './expect.js';
 
 describe('end to end', ()=> {
 
-  readdirSync(join(__dirname, 'end-to-end')).forEach(testCase=> {
+  readdirSync(join(__dirname, 'input-output')).forEach(testCase=> {
 
     it(`preserves comments and styling for test case ${testCase}`, ()=> {
 
