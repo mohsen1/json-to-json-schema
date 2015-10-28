@@ -1,7 +1,7 @@
 {
   "name": "json-to-json-schema",
   "description": "JSON to JSON Schema. Convert a JSON to a JSON Schema describing that JSON",
-  "main": "index.js",
+  "main": "dist/browser.js",
   "authors": [
     "Mohsen Azimi <me@azimi.me>"
   ],
