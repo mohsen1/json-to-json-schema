@@ -38,4 +38,66 @@ describe('primitives', ()=> {
   describe('empty object', ()=> {
     expect({}, {type: 'object'});
   });
+
+  describe('array of strings', ()=> {
+    expect(['a', 'b', 'c'], {
+      type: 'array',
+      items: {
+        type: 'string'
+      }
+    });
+  });
+
+  describe('array of integers', ()=> {
+    expect([4, 3, 1], {
+      type: 'array',
+      items: {
+        type: 'integer'
+      }
+    });
+  });
+
+  describe('array of strings and integers', ()=> {
+    expect([1, 2, '3', '4'], {
+      type: 'array',
+      items: {
+        oneOf: [
+          {type: 'integer'},
+          {type: 'string'}
+        ]
+      }
+    });
+  });
+
+  describe('array of strings and integers and booleans', ()=> {
+    expect([1, 2, '3', '4', true, false], {
+      type: 'array',
+      items: {
+        oneOf: [
+          {type: 'integer'},
+          {type: 'string'},
+          {type: 'boolean'}
+        ]
+      }
+    });
+  });
+
+  describe('object of a simple primitive', ()=> {
+    expect({a: 1}, {
+      type: 'object',
+      properties: {
+        a: {type: 'integer'}
+      }
+    });
+  });
+
+  describe('object of multiple simple primitives', ()=> {
+    expect({a: 1, b: ''}, {
+      type: 'object',
+      properties: {
+        a: {type: 'integer'},
+        b: {type: 'string'}
+      }
+    });
+  });
 });

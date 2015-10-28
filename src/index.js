@@ -1,6 +1,18 @@
 'use strict';
 
+import isEqual from 'lodash.isequal';
+
+/*
+ * Converts a JSON object to a JSON Schema
+ * @param {any} json
+ * @param {object} options
+ * @returns {object} a json schema
+*/
 function convert (json, options = {}) {
+
+  if (typeof json === 'function') {
+    throw new TypeError('Can not convert a function');
+  }
 
   if (json === undefined) {
     return {};
@@ -36,7 +48,18 @@ function convert (json, options = {}) {
       return schema;
     }
 
-    // TODO: array items
+    let schemas = json.map(convert);
+
+    // if all schemas are the same use that schema for items
+    if (schemas.every(s=> isEqual(s, schemas[0]))) {
+      schema.items = schemas[0];
+
+    // if there are multiple schemas use oneOf
+    } else {
+      schema.items = {oneOf: unique(schemas)};
+    }
+
+    return schema;
   }
 
   let schema = {type: 'object'};
@@ -45,7 +68,28 @@ function convert (json, options = {}) {
     return schema;
   }
 
+  schema.properties = Object.keys(json).reduce((properties, key) => {
+    properties[key] = convert(json[key]);
+    return properties;
+  }, {});
 
+  return schema;
+}
+
+/*
+ * Removes duplicates from array using isEqual comparator
+ * @param {array}
+ * @return {array}
+*/
+function unique(arr = []) {
+  return arr.reduce((result, item) => {
+
+    // result does not contain item
+    if (!result.some(i=> isEqual(i, item))) {
+      result.push(item);
+    }
+    return result;
+  }, []);
 }
 
 export {convert};

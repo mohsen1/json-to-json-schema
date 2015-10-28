@@ -28,5 +28,8 @@
     "json"
   ],
   "author": "Mohsen Azimi <me@azimi.me>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "lodash.isequal": "^3.0.4"
+  }
 }
