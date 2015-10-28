@@ -1,6 +1,6 @@
-# JSON Schema from JSON
+# JSON to JSON Schema
 
-> JSON to JSON Schema. Convert a JSON to a JSON Schema describing that JSON
+> JSON to JSON Schema convert a JSON to a JSON Schema describing that JSON
 
 ## Usage
 
@@ -18,10 +18,10 @@ console.log(mySchema); // => {type: 'object', properties: {name: {type: 'string'
 Use npm or Bower to install this package
 
 ```
-npm install --save json-schmea-from-json
+npm install --save json-to-json-schema
 ```
 ```
-bower install --save json-schmea-from-json
+bower install --save json-to-json-schema
 ```
 
 ## Development
