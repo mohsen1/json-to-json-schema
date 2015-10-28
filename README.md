@@ -23,6 +23,7 @@ npm install --save json-to-json-schema
 ```
 bower install --save json-to-json-schema
 ```
+The browser module supports all UMD module systems. It exposes `JSONToJSONSchema` global object when there is no module system available.
 
 ## Development
 To install dependencies
