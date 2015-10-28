@@ -2,7 +2,6 @@
 
 import {readFileSync, readdirSync} from 'fs';
 import {join} from 'path';
-import {load} from 'js-yaml';
 import expect from './expect.js';
 
 describe('end to end', ()=> {
