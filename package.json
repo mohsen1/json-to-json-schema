@@ -18,7 +18,9 @@
     "test": "mocha --compilers js:babel/register",
     "babelify": "babel src/index.js --out-file dist/index.js",
     "browserify": "browserify --debug src/index.js -t babelify -s JSONToJSONSchema --outfile dist/browser.js",
-    "prepublish": "npm run babelify; npm run browserify"
+    "postbrowserify": "npm run prepend-semicolon",
+    "prepublish": "npm run babelify; npm run browserify",
+    "prepend-semicolon": "echo -e \";`cat dist/browser.js`\" > dist/browser.js"
   },
   "repository": {
     "type": "git",
