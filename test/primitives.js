@@ -32,7 +32,7 @@ describe('primitives', ()=> {
   });
 
   describe('empty array', ()=> {
-    expect([], {type: 'array'});
+    expect([], {type: 'array', items: {}});
   });
 
   describe('empty object', ()=> {

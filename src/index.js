@@ -45,6 +45,7 @@ function convert (json, options = {}) {
     let schema = {type: 'array'};
 
     if (!json.length) {
+      schema.items = {};
       return schema;
     }
 
