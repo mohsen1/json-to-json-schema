@@ -1,6 +1,6 @@
 {
   "name": "json-to-json-schema",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "JSON to JSON Schema. Convert a JSON to a JSON Schema describing that JSON",
   "main": "dist/index.js",
   "devDependencies": {
