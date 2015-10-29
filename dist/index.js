@@ -55,6 +55,7 @@ function convert(json) {
       var schema = { type: 'array' };
 
       if (!json.length) {
+        schema.items = {};
         return {
           v: schema
         };
