@@ -10,7 +10,7 @@
 ```js
 import {convert} from 'json-schmea-from-json';
 
-const myJson = {name: 'string'};
+const myJson = {name: 'Mohsen'};
 
 const mySchema = convert(myJson);
 
