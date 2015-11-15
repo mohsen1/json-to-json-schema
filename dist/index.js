@@ -1,5 +1,13 @@
 'use strict';
 
+// Regex used here are all from 
+// http://code.tutsplus.com/tutorials/8-regular-expressions-you-should-know--net-6149 
+var regex = {
+  email : /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/,
+  url   : /^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/,
+  ip    : /^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/ 
+};
+
 Object.defineProperty(exports, '__esModule', {
   value: true
 });
@@ -25,6 +33,20 @@ function convert(json) {
 
   if (json === undefined) {
     return {};
+  }
+
+  // check for a URL, before testing against the type "string",
+  // because every URL is also a string 
+  if(regex.url.test(json)){
+    return { type: 'url'};
+  }
+
+  if(regex.email.test(json)){
+    return { type: 'email'};
+  }
+
+  if(regex.ip.test(json)){
+    return { type: 'ip'};
   }
 
   // primitives
