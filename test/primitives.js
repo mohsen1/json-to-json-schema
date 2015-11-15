@@ -101,3 +101,20 @@ describe('primitives', ()=> {
     });
   });
 });
+
+describe('Custom formats', ()=> {
+  
+  describe('email', ()=> {
+    expect('test@gmail.com', {type:'string', format: 'email'});    
+  });
+
+  describe('ip', ()=> {
+    expect('127.0.0.1', {type:'string', format: 'ip'});    
+  });
+
+  describe('url', ()=> {
+    expect('https://google.com', {type:'string', format: 'url'});    
+  });
+
+  
+});
