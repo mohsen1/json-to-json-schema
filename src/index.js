@@ -30,15 +30,15 @@ function convert (json, options = {}) {
   if (typeof json === 'string') {
 
     if(FORMAT_REGEX.url.test(json)){
-      return { type:'string',format : 'url'};
+      return {type: 'string', format: 'url'};
     }
 
     if(FORMAT_REGEX.email.test(json)){
-      return { type:'string',format : 'email'};
+      return {type:'string', format: 'email'};
     }
 
     if(FORMAT_REGEX.ip.test(json)){
-      return { type:'string',format : 'ip'};
+      return {type:'string', format: 'ip'};
     }
 
     // TODO: date format
