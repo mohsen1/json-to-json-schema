@@ -2,6 +2,14 @@
 
 import isEqual from 'lodash.isequal';
 
+// Regex used here are all from 
+// http://code.tutsplus.com/tutorials/8-regular-expressions-you-should-know--net-6149 
+const FORMAT_REGEX = {
+  email : /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/,
+  url   : /^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/,
+  ip    : /^(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)$/ 
+};
+
 /*
  * Converts a JSON object to a JSON Schema
  * @param {any} json
@@ -20,6 +28,18 @@ function convert (json, options = {}) {
 
   // primitives
   if (typeof json === 'string') {
+
+    if (FORMAT_REGEX.url.test(json)){
+      return {type: 'string', format: 'url'};
+    }
+
+    if (FORMAT_REGEX.email.test(json)){
+      return {type:'string', format: 'email'};
+    }
+
+    if (FORMAT_REGEX.ip.test(json)){
+      return {type:'string', format: 'ip'};
+    }
 
     // TODO: date format
     return {type: 'string'};
