@@ -29,15 +29,15 @@ function convert (json, options = {}) {
   // primitives
   if (typeof json === 'string') {
 
-    if(FORMAT_REGEX.url.test(json)){
+    if (FORMAT_REGEX.url.test(json)){
       return {type: 'string', format: 'url'};
     }
 
-    if(FORMAT_REGEX.email.test(json)){
+    if (FORMAT_REGEX.email.test(json)){
       return {type:'string', format: 'email'};
     }
 
-    if(FORMAT_REGEX.ip.test(json)){
+    if (FORMAT_REGEX.ip.test(json)){
       return {type:'string', format: 'ip'};
     }
 
