@@ -8,7 +8,7 @@
 ## Usage
 
 ```js
-import {convert} from 'json-schmea-from-json';
+import {convert} from 'json-to-json-schema';
 
 const myJson = {name: 'Mohsen'};
 
